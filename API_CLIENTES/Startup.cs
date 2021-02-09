@@ -23,7 +23,9 @@ namespace API_CLIENTES {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
+            // Configuración del contexto de la API
             services.AddDbContext<APIContext>(opt => opt.UseInMemoryDatabase("NET_MVC"));
+
             services.AddControllers();
 
             // Registrar Swagger
@@ -46,6 +48,7 @@ namespace API_CLIENTES {
                 endpoints.MapControllers();
             });
 
+            // Configuración de Swagger
             app.UseSwagger();
 
             app.UseSwaggerUI(c => {

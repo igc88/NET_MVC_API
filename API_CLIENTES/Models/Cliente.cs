@@ -11,6 +11,7 @@ namespace API_CLIENTES.Models {
         private string _direccion = string.Empty;
         private string _dni = string.Empty;
         private DateTime _fecha;
+        private ICollection<Video> _videos;
 
         public int Id {
             get => _id;
@@ -35,6 +36,10 @@ namespace API_CLIENTES.Models {
         public DateTime Fecha {
             get => _fecha;
             set => _fecha = value;
+        }
+        public ICollection<Video> Videos {
+            get => _videos;
+            set => _videos = value;
         }
     }
 }
